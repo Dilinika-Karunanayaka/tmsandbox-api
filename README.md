@@ -26,6 +26,7 @@
 > -  mvn clean test
 > -  mvn clean test -Penv.trademe
 >  - **Note** - Maven Profile 'env.tmsandbox' is enabled by default
+>  - https://youtu.be/AQvGD08hgX4
 
 ## Test Reports
 > - Default Cucumber report - target/cucumber-reports/Cucumber.html
