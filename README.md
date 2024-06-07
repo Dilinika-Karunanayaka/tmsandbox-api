@@ -17,7 +17,7 @@
 > - Run tests against multiple environments based on selected profiles/configs 
 > - Multiple test reports - default and third party
 
-## Test Cases 
+## Test Cases - WIP
 > - Positive, negative tests, edge cases
 > - Security and performance aspects
 > - Format, type and arrangement of data expected
