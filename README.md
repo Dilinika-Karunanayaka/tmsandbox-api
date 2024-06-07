@@ -13,7 +13,7 @@
 > - Masterthought - Custom test report
 
 ### Capabilities
-> - Parallel test execution (dynami or fixed)
+> - Parallel test execution (dynamic or fixed)
 > - Run tests against multiple environments based on selected profiles/configs 
 > - Multiple test reports - default and third party
 
