@@ -22,12 +22,12 @@ public class CucumberHooks {
     }
 
     @Before()
-    public void openBrowser() {
+    public void before() {
         log.info("CucumberHooks.Before");
     }
 
     @After()
-    public void closeBrowser() {
+    public void after() {
         log.info("CucumberHooks.After");
     }
 
