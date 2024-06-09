@@ -83,12 +83,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.github.scribejava</groupId>
-            <artifactId>scribejava-core</artifactId>
-            <version>${scribejava.core.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
