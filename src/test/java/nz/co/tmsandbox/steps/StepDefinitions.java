@@ -31,8 +31,8 @@ public class StepDefinitions {
         this.scenarioContext = scenarioContext;
     }
 
-    @Given("I set the base URL")
-    public void setBaseURL() {
+    @Given("I set the base URI")
+    public void setBaseURI() {
         APIManager.setBaseURI();
     }
 

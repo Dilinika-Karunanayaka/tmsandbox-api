@@ -1,7 +1,7 @@
 Feature: Negative tests for Categories API
 
   Scenario Outline: Validate HTTP Method <Method> for Category endpoint
-    Given I set the base URL
+    Given I set the base URI
     When I send a "<Method>" request to "/Categories/0001.json"
     Then the response status code should be <Status Code>
     Examples:
@@ -12,7 +12,7 @@ Feature: Negative tests for Categories API
       | DELETE | 405         |
 
   Scenario Outline: Retrieve an special character category number
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "<Request>"
     Then the response status code should be <Status Code>
     Examples:

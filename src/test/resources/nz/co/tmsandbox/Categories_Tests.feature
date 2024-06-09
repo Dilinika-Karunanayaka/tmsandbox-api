@@ -1,7 +1,7 @@
 Feature: Positve tests for Categories API
 
   Scenario: Retrieve Root category
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "/Categories.json"
     Then the response status code should be 200
     And the response should contain below values in root
@@ -13,7 +13,7 @@ Feature: Positve tests for Categories API
       | IsLeaf         | false |
 
   Scenario: Validate Trade Me Motor Category
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "/Categories/0001.json"
     Then the response status code should be 200
     And the response should have the following fields
@@ -39,13 +39,13 @@ Feature: Positve tests for Categories API
       | IsLeaf                | false            |
 
   Scenario: Retrieve categories with zero depth value
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "Categories.json?depth=0"
     Then the response status code should be 200
     And the response should not contain a field "Subcategories"
 
   Scenario Outline: Retrieve categories with valid depth values
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "Categories.json?depth=<Depth Value>"
     Then the response status code should be 200
     And the response should contain a field "Subcategories"
@@ -55,7 +55,7 @@ Feature: Positve tests for Categories API
       | 2           |
 
   Scenario Outline: Retrieve categories with <Format> file format
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "/Categories/0001.<Format>"
     Then the response status code should be 200
     And the response format should be "<format>"
@@ -65,7 +65,7 @@ Feature: Positve tests for Categories API
       | xml    |
 
   Scenario Outline: Retrieve number of items for sale in <Category>
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "Categories/<Number>.json?with_counts=true"
     Then the response status code should be 200
     And the response should contain a field "Count"
@@ -77,7 +77,7 @@ Feature: Positve tests for Categories API
       | Property | 0350   |
 
   Scenario Outline: Retrieve number of items for sale in a region
-    Given I set the base URL
+    Given I set the base URI
     When I send a GET request to "Categories/<Number>.json?with_counts=true&region=2"
     Then the response status code should be 200
     And the response should contain a field "Count"
