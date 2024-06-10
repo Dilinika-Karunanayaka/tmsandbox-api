@@ -63,24 +63,24 @@ public class StepDefinitions {
         properties.forEach((propertyName, expectedValue) -> {
             assertTrue(response.jsonPath().getMap("").containsKey(propertyName), "Response body does not contain property: " + propertyName);
 
-            Object propertyValue = response.jsonPath().get(propertyName);
+            Object actualValue = response.jsonPath().get(propertyName);
             log.info("propertyName=" + propertyName);
             switch (propertyName) {
                 case "Name":
-                    assertEquals(expectedValue, propertyValue, "Property '" + propertyName + "' does not match expected value");
+                    assertEquals(expectedValue, actualValue, "Property '" + propertyName + "' does not match expected value");
                     break;
                 case "Number":
                 case "Path":
-                    assertTrue(propertyValue instanceof String, "Property '" + propertyName + "' is not a String");
+                    assertTrue(actualValue instanceof String, "Property '" + propertyName + "' is not a String");
                     break;
                 case "Subcategories":
-                    assertTrue(propertyValue instanceof Iterable, "Property '" + propertyName + "' is not an array");
+                    assertTrue(actualValue instanceof Iterable, "Property '" + propertyName + "' is not an array");
                     break;
                 case "AreaOfBusiness":
-                    assertEquals(Integer.parseInt(expectedValue), propertyValue, "Property '" + propertyName + "' does not match expected value");
+                    assertEquals(Integer.parseInt(expectedValue), actualValue, "Property '" + propertyName + "' does not match expected value");
                     break;
                 case "IsLeaf":
-                    assertEquals(Boolean.parseBoolean(expectedValue), propertyValue, "Property '" + propertyName + "' does not match expected value");
+                    assertEquals(Boolean.parseBoolean(expectedValue), actualValue, "Property '" + propertyName + "' does not match expected value");
                     break;
                 default:
                     throw new IllegalArgumentException("Unsupported property: " + propertyName);
@@ -94,25 +94,25 @@ public class StepDefinitions {
         properties.forEach((propertyName, expectedValue) -> {
             assertTrue(response.jsonPath().getMap("").containsKey(propertyName), "Response body does not contain property: " + propertyName);
 
-            Object propertyValue = response.jsonPath().get(propertyName);
+            Object actualValue = response.jsonPath().get(propertyName);
             log.info("propertyName=" + propertyName);
             switch (propertyName) {
                 case "Name":
                 case "Number":
                 case "Path":
-                    assertEquals(expectedValue, propertyValue, "Property '" + propertyName + "' does not match expected value");
+                    assertEquals(expectedValue, actualValue, "Property '" + propertyName + "' does not match expected value");
                     break;
                 case "Subcategories":
-                    assertTrue(propertyValue instanceof Iterable, "Property '" + propertyName + "' is not an array");
+                    assertTrue(actualValue instanceof Iterable, "Property '" + propertyName + "' is not an array");
                     break;
                 case "AreaOfBusiness":
-                    assertEquals(Integer.parseInt(expectedValue), propertyValue, "Property '" + propertyName + "' does not match expected value");
+                    assertEquals(Integer.parseInt(expectedValue), actualValue, "Property '" + propertyName + "' does not match expected value");
                     break;
                 case "HasClassifieds":
                 case "CanHaveSecondCategory":
                 case "CanBeSecondCategory":
                 case "IsLeaf":
-                    assertEquals(Boolean.parseBoolean(expectedValue), propertyValue, "Property '" + propertyName + "' does not match expected value");
+                    assertEquals(Boolean.parseBoolean(expectedValue), actualValue, "Property '" + propertyName + "' does not match expected value");
                     break;
                 default:
                     throw new IllegalArgumentException("Unsupported property: " + propertyName);
